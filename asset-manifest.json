@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/chart-site/static/js/main.1f3c16dd.js",
+    "main.js": "/chart-site/static/js/main.b4a1f7e3.js",
     "index.html": "/chart-site/index.html",
-    "main.1f3c16dd.js.map": "/chart-site/static/js/main.1f3c16dd.js.map"
+    "main.b4a1f7e3.js.map": "/chart-site/static/js/main.b4a1f7e3.js.map"
   },
   "entrypoints": [
-    "static/js/main.1f3c16dd.js"
+    "static/js/main.b4a1f7e3.js"
   ]
 }
