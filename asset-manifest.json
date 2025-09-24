@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/chart-site/static/js/main.3920a422.js",
+    "index.html": "/chart-site/index.html",
+    "main.3920a422.js.map": "/chart-site/static/js/main.3920a422.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.3920a422.js"
+  ]
+}
