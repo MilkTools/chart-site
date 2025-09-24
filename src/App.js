@@ -1,63 +1,53 @@
 import React from "react";
-import { LineChart, Line, XAxis, YAxis, BarChart, Bar } from "recharts";
+import { LineChart, Line, XAxis, YAxis, BarChart, Bar, CartesianGrid, Tooltip } from "recharts";
 
 function App() {
   const data = [
-    { name: "Barley", "11d": 29, "10d": 30, "9d": 32 },
-    { name: "Rosa", "11d": 16, "10d": 16, "9d": 16 },
-    { name: "Rico", "11d": 12, "10d": 15, "9d": 18 },
-    { name: "Penny", "11d": 35, "10d": 45, "9d": 49 },
-    { name: "8-Bit", "11d": 34, "10d": 37, "9d": 39 },
-    { name: "Gus", "11d": 73, "10d": 81, "9d": 94 },
-    { name: "Pam", "11d": 30, "10d": 34, "9d": 33 },
-    { name: "Nani", "11d": 12, "10d": 12, "9d": 14 },
-    { name: "Collette", "11d": 15, "10d": 17, "9d": 18 },
-    { name: "Belle", "11d": 22, "10d": 22, "9d": 24 },
-    { name: "Grom", "11d": 20, "10d": 22, "9d": 29 },
-    { name: "Ash", "11d": 23, "10d": 24, "9d": 25 },
-    { name: "Lola", "11d": 9, "10d": 9, "9d": 9 },
-    { name: "Sam", "11d": 23, "10d": 24, "9d": 25 },
-    { name: "Maisie", "11d": 46, "10d": 51, "9d": 57 },
-    { name: "Hank", "11d": 97, "10d": 106, "9d": 107 },
-    { name: "Gene", "11d": 44, "10d": 49, "9d": 48 },
-    { name: "Max", "11d": 27, "10d": 32, "9d": 35 },
-    { name: "Sprout", "11d": 11, "10d": 11, "9d": 12 },
-    { name: "Lou", "11d": 37, "10d": 37, "9d": 38 },
-    { name: "Ruffs", "11d": 29, "10d": 30, "9d": 30 },
-    { name: "Squeak", "11d": 28, "10d": 29, "9d": 29 },
-    { name: "Eve", "11d": 58, "10d": 69, "9d": 70 },
-    { name: "Willow", "11d": 13, "10d": 14, "9d": 14 },
-    { name: "Moe", "11d": 31, "10d": 32, "9d": 34 },
-    { name: "Juju", "11d": 12, "10d": 14, "9d": 15 },
-    { name: "Lumi", "11d": 21, "10d": 21, "9d": 21 },
-    { name: "Finx", "11d": 48, "10d": 53, "9d": 63 },
-    { name: "Spike", "11d": 38, "10d": 43, "9d": 45 },
-    { name: "Sandy", "11d": 10, "10d": 10, "9d": 12 },
-    { name: "Amber", "11d": 22, "10d": 22, "9d": 23 },
-    { name: "Trunk", "11d": null, "10d": 39, "9d": 41 },
-    { name: "Dyna", "11d": null, "10d": 123, "9d": 54 },
-    { name: "Poco", "11d": null, "10d": null, "9d": 39 },
-    { name: "Berry", "11d": null, "10d": null, "9d": 69 },
+    { name: "Barley", d11: 29, d10: 30, d9: 32 },
+    { name: "Rosa", d11: 16, d10: 16, d9: 16 },
+    { name: "Rico", d11: 12, d10: 15, d9: 18 },
+    { name: "Penny", d11: 35, d10: 45, d9: 49 },
+    { name: "8-Bit", d11: 34, d10: 37, d9: 39 },
+    { name: "Gus", d11: 73, d10: 81, d9: 94 },
+    { name: "Pam", d11: 30, d10: 34, d9: 33 },
+    { name: "Nani", d11: 12, d10: 12, d9: 14 },
+    { name: "Collette", d11: 15, d10: 17, d9: 18 },
+    { name: "Belle", d11: 22, d10: 22, d9: 24 },
   ];
 
   return (
-    <div style={{ textAlign: "center", marginTop: "20px" }}>
-      <h2>Brawler Stats</h2>
+    <div style={{
+      textAlign: "center",
+      marginTop: "20px",
+      backgroundColor: "#0e0e0e",
+      color: "#f0f0f0",
+      minHeight: "100vh",
+      padding: "20px"
+    }}>
+      <h2 style={{ fontFamily: "Arial, sans-serif", fontSize: "2rem", marginBottom: "40px", color: "#00f0ff" }}>
+        Brawler Stats
+      </h2>
 
-      <LineChart width={800} height={400} data={data}>
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Line dataKey="11d" stroke="red" />
-        <Line dataKey="10d" stroke="orange" />
-        <Line dataKey="9d" stroke="green" />
+      {/* Line Chart */}
+      <LineChart width={750} height={350} data={data} style={{ margin: "0 auto" }}>
+        <CartesianGrid stroke="#333" strokeDasharray="5 5" />
+        <XAxis dataKey="name" tick={{ fill: "#00f0ff", fontSize: 14 }} />
+        <YAxis tick={{ fill: "#00f0ff", fontSize: 14 }} />
+        <Tooltip contentStyle={{ backgroundColor: "#222", borderRadius: "10px", color: "#fff" }} />
+        <Line dataKey="d11" stroke="cyan" strokeWidth={3} dot={{ r: 5, fill: "#00f0ff" }} />
+        <Line dataKey="d10" stroke="#ff6ec7" strokeWidth={3} dot={{ r: 5, fill: "#ff6ec7" }} />
+        <Line dataKey="d9" stroke="#a0ff4d" strokeWidth={3} dot={{ r: 5, fill: "#a0ff4d" }} />
       </LineChart>
 
-      <BarChart width={800} height={400} data={data}>
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Bar dataKey="11d" fill="red" />
-        <Bar dataKey="10d" fill="orange" />
-        <Bar dataKey="9d" fill="green" />
+      {/* Bar Chart */}
+      <BarChart width={750} height={350} data={data} style={{ margin: "50px auto" }}>
+        <CartesianGrid stroke="#333" strokeDasharray="3 3" />
+        <XAxis dataKey="name" tick={{ fill: "#00f0ff", fontSize: 14 }} />
+        <YAxis tick={{ fill: "#00f0ff", fontSize: 14 }} />
+        <Tooltip contentStyle={{ backgroundColor: "#222", borderRadius: "10px", color: "#fff" }} />
+        <Bar dataKey="d11" fill="cyan" radius={[5, 5, 0, 0]} />
+        <Bar dataKey="d10" fill="#ff6ec7" radius={[5, 5, 0, 0]} />
+        <Bar dataKey="d9" fill="#a0ff4d" radius={[5, 5, 0, 0]} />
       </BarChart>
     </div>
   );
