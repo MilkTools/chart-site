@@ -39,7 +39,7 @@ function App() {
     { name: "Amber", d11: 22, d10: 22, d9: 23, d8: 23 },
     { name: "Dyna", d11: null, d10: 123, d9: 54, d8: 54 },
     { name: "Poco", d11: null, d10: null, d9: 39, d8: 39 },
-    { name: "Berry", d11: null, d10: null, d9: 69, d8: 69 },
+    { name: "Berry", d11: null, d10: null, d9: 69, d8: 69 }
   ];
 
   return (
@@ -51,14 +51,18 @@ function App() {
       minHeight: "100vh",
       padding: "20px"
     }}>
-      <h2 style={{ fontFamily: "Arial, sans-serif", fontSize: "2rem", marginBottom: "40px", color: "#00f0ff" }}>
-        Brawler Stats (Last 4 Days)
+      <h2 style={{
+        fontFamily: "Arial, sans-serif",
+        fontSize: "2rem",
+        marginBottom: "40px",
+        color: "#00f0ff"
+      }}>
+        Brawler Stats (11d - 8d left)
       </h2>
 
-      {/* Line Chart */}
-      <LineChart width={900} height={400} data={data} style={{ margin: "0 auto" }}>
+      <LineChart width={1200} height={400} data={data} style={{ margin: "0 auto" }}>
         <CartesianGrid stroke="#333" strokeDasharray="5 5" />
-        <XAxis dataKey="name" tick={{ fill: "#00f0ff", fontSize: 12, angle: -45, textAnchor: "end" }} height={70} />
+        <XAxis dataKey="name" tick={{ fill: "#00f0ff", fontSize: 12, angle: -45, textAnchor: "end" }} height={80} />
         <YAxis tick={{ fill: "#00f0ff", fontSize: 14 }} />
         <Tooltip contentStyle={{ backgroundColor: "#222", borderRadius: "10px", color: "#fff" }} />
         <Line dataKey="d11" stroke="cyan" strokeWidth={3} dot={{ r: 4, fill: "#00f0ff" }} />
@@ -67,10 +71,9 @@ function App() {
         <Line dataKey="d8" stroke="#ffd700" strokeWidth={3} dot={{ r: 4, fill: "#ffd700" }} />
       </LineChart>
 
-      {/* Bar Chart */}
-      <BarChart width={900} height={400} data={data} style={{ margin: "50px auto" }}>
+      <BarChart width={1200} height={400} data={data} style={{ margin: "50px auto" }}>
         <CartesianGrid stroke="#333" strokeDasharray="3 3" />
-        <XAxis dataKey="name" tick={{ fill: "#00f0ff", fontSize: 12, angle: -45, textAnchor: "end" }} height={70} />
+        <XAxis dataKey="name" tick={{ fill: "#00f0ff", fontSize: 12, angle: -45, textAnchor: "end" }} height={80} />
         <YAxis tick={{ fill: "#00f0ff", fontSize: 14 }} />
         <Tooltip contentStyle={{ backgroundColor: "#222", borderRadius: "10px", color: "#fff" }} />
         <Bar dataKey="d11" fill="cyan" radius={[5, 5, 0, 0]} />
